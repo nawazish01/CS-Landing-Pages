@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MarketAI — For Solopreneurs</title>
+<title>ContentStudio — For Solopreneurs</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -20,9 +20,7 @@
     --sub:       #4a5e78;
     --muted:     #8494a8;
     --border:    rgba(177,216,252,0.65);
-    --bsoft:     rgba(0,104,229,0.1);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: var(--white); color: var(--text); font-family: 'Poppins', sans-serif; line-height: 1.65; overflow-x: hidden; }
@@ -32,7 +30,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     height: 68px; display: flex; align-items: center; justify-content: space-between;
     padding: 0 60px;
-    background: rgba(255,255,255,0.85); backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.88); backdrop-filter: blur(18px);
     border-bottom: 1px solid rgba(177,216,252,0.5);
   }
   .nav-logo { display: flex; align-items: center; gap: 9px; font-size: 1.2rem; font-weight: 700; color: var(--text); text-decoration: none; }
@@ -44,23 +42,18 @@
   .nav-right { display: flex; align-items: center; gap: 16px; }
   .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--sub); text-decoration: none; transition: color 0.18s; }
   .nav-link:hover { color: var(--blue); }
-  .nav-btn { background: var(--blue); color: #fff; font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 600; padding: 10px 22px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; transition: all 0.18s; box-shadow: 0 3px 12px rgba(0,104,229,0.28); }
-  .nav-btn:hover { background: var(--blue-dark); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(0,104,229,0.38); }
+  .nav-btn { background: var(--blue); color: #fff; font-family: 'Poppins', sans-serif; font-size: 0.875rem; font-weight: 600; padding: 10px 22px; border-radius: 100px; border: none; cursor: pointer; transition: all 0.18s; box-shadow: 0 3px 12px rgba(0,104,229,0.28); text-decoration: none; display: inline-block; }
+  .nav-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
 
   /* ── HERO ── */
   .hero {
-    /* ContentStudio-style: white centre fading to #b1d8fc at edges/bottom */
-    background:
-      radial-gradient(ellipse 120% 90% at 50% -10%,  #ffffff 0%, #d9eefe 45%, #b1d8fc 100%);
+    background: radial-gradient(ellipse 120% 90% at 50% -10%, #ffffff 0%, #d9eefe 45%, #b1d8fc 100%);
     min-height: 100vh;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 148px 60px 120px;
     text-align: center;
     position: relative; overflow: hidden;
   }
-
-  /* Subtle noise/shimmer overlay like ContentStudio */
   .hero::after {
     content: '';
     position: absolute; inset: 0;
@@ -74,13 +67,11 @@
   .hero-eyebrow {
     display: inline-flex; align-items: center; gap: 8px;
     font-size: 0.82rem; font-weight: 500; color: var(--blue);
-    background: rgba(255,255,255,0.7); border: 1px solid rgba(0,104,229,0.18);
+    background: rgba(255,255,255,0.75); border: 1px solid rgba(0,104,229,0.18);
     padding: 8px 18px; border-radius: 100px; margin-bottom: 32px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); box-shadow: 0 2px 12px rgba(0,104,229,0.08);
     animation: fadeUp 0.5s ease both;
-    box-shadow: 0 2px 12px rgba(0,104,229,0.08);
   }
-  .ew-icon { font-size: 0.9rem; }
 
   .hero h1 {
     font-size: clamp(2.8rem, 5.8vw, 4.6rem); font-weight: 800;
@@ -91,8 +82,8 @@
   .hero h1 .hl { color: var(--blue); }
 
   .hero-sub {
-    margin: 22px auto 0; font-size: 1.1rem; font-weight: 400; color: var(--sub);
-    max-width: 520px; line-height: 1.78;
+    margin: 22px auto 0; font-size: 1.05rem; font-weight: 400; color: var(--sub);
+    max-width: 560px; line-height: 1.8;
     animation: fadeUp 0.55s 0.15s ease both;
   }
 
@@ -109,25 +100,26 @@
   }
   .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,104,229,0.45); }
   .btn-outline {
-    background: rgba(255,255,255,0.8); color: var(--text);
+    background: rgba(255,255,255,0.85); color: var(--text);
     font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 500;
     padding: 15px 30px; border-radius: 100px; text-decoration: none;
-    border: 1.5px solid rgba(0,104,229,0.18); cursor: pointer; transition: all 0.2s;
+    border: 1.5px solid rgba(0,104,229,0.22); cursor: pointer; transition: all 0.2s;
     backdrop-filter: blur(6px);
   }
-  .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: rgba(255,255,255,0.95); }
+  .btn-outline:hover { border-color: var(--blue); color: var(--blue); background: rgba(255,255,255,0.96); }
 
   .hero-note {
     margin-top: 18px; font-size: 0.82rem; color: var(--sub);
     animation: fadeUp 0.55s 0.28s ease both;
   }
+  .hero-note .sep { margin: 0 8px; color: var(--muted); }
 
   .social-proof {
     margin-top: 48px; display: flex; align-items: center; justify-content: center; gap: 14px;
     animation: fadeUp 0.55s 0.34s ease both;
   }
   .avs { display: flex; }
-  .av { width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.8); margin-left: -10px; font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .av { width: 34px; height: 34px; border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.85); margin-left: -10px; font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
   .av:first-child { margin-left: 0; }
   .av1 { background: var(--blue); color: #fff; }
   .av2 { background: #338eef; color: #fff; }
@@ -138,7 +130,7 @@
   .st-gold { color: #f59e0b; }
 
   /* ── LOGOS ── */
-  .logos-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 36px 60px; }
+  .logos-bar { background: var(--white); border-bottom: 1px solid var(--border); padding: 34px 60px; }
   .logos-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 44px; flex-wrap: wrap; }
   .logos-lbl { font-size: 0.72rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
   .logo-n { font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.55; transition: all 0.2s; }
@@ -147,14 +139,11 @@
   /* ── SECTIONS ── */
   .sec { padding: 92px 60px; max-width: 1100px; margin: 0 auto; }
   .sec-grey { background: var(--grey); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  /* Sky section uses same gradient style as hero but lighter */
-  .sec-sky {
-    background: radial-gradient(ellipse 110% 80% at 50% 0%, #ffffff 0%, #cce8fd 50%, var(--sky) 100%);
-    border-top: 1px solid rgba(0,104,229,0.1); border-bottom: 1px solid rgba(0,104,229,0.1);
-  }
+  .sec-sky { background: radial-gradient(ellipse 110% 80% at 50% 0%, #ffffff 0%, #cce8fd 50%, var(--sky) 100%); border-top: 1px solid rgba(0,104,229,0.1); border-bottom: 1px solid rgba(0,104,229,0.1); }
 
   .chip { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(0,104,229,0.08); color: var(--blue); border: 1px solid rgba(0,104,229,0.15); padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; }
   .stitle { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.18; letter-spacing: -0.022em; color: var(--text); }
+  .sdesc { margin-top: 16px; font-size: 0.975rem; color: var(--sub); max-width: 600px; line-height: 1.8; }
 
   /* ── PAIN ── */
   .pain-grid { margin-top: 52px; display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
@@ -166,14 +155,13 @@
 
   /* ── FEATURES ── */
   .feat-top { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 52px; }
-  .feat-top p { font-size: 0.95rem; color: var(--sub); line-height: 1.8; }
+  .feat-top-text p.feat-desc { font-size: 0.95rem; color: var(--sub); line-height: 1.8; margin-top: 14px; }
   .feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
   .fcard { background: var(--white); border: 1.5px solid var(--border); border-radius: 18px; padding: 30px; transition: all 0.22s; }
   .fcard:hover { border-color: var(--blue); box-shadow: 0 10px 36px rgba(0,104,229,0.1); transform: translateY(-3px); }
   .fcard .ficon { width: 46px; height: 46px; border-radius: 13px; background: var(--sky-20); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; margin-bottom: 16px; }
   .fcard h3 { font-size: 0.975rem; font-weight: 700; margin-bottom: 9px; }
   .fcard p { font-size: 0.865rem; color: var(--sub); line-height: 1.78; }
-  .ftag { display: inline-block; margin-top: 13px; font-size: 0.68rem; font-weight: 600; background: rgba(0,104,229,0.08); color: var(--blue); border: 1px solid rgba(0,104,229,0.15); padding: 3px 10px; border-radius: 100px; }
 
   /* ── STATS ── */
   .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1.5px solid var(--border); border-radius: 18px; overflow: hidden; margin: 0 60px; }
@@ -185,13 +173,14 @@
   /* ── TESTIMONIALS ── */
   .testi-h { font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 700; text-align: center; letter-spacing: -0.02em; margin-bottom: 48px; }
   .tgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-  .tcard { background: rgba(255,255,255,0.75); border: 1.5px solid rgba(255,255,255,0.9); border-radius: 18px; padding: 28px; transition: all 0.22s; backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0,104,229,0.06); }
-  .tcard:hover { border-color: var(--white); box-shadow: 0 10px 36px rgba(0,104,229,0.12); transform: translateY(-3px); }
+  .tcard { background: rgba(255,255,255,0.8); border: 1.5px solid rgba(255,255,255,0.95); border-radius: 18px; padding: 28px; transition: all 0.22s; backdrop-filter: blur(8px); box-shadow: 0 4px 20px rgba(0,104,229,0.06); }
+  .tcard:hover { box-shadow: 0 10px 36px rgba(0,104,229,0.13); transform: translateY(-3px); }
   .tcard .st { color: #f59e0b; font-size: 0.9rem; margin-bottom: 13px; }
   .tcard blockquote { font-size: 0.875rem; color: var(--text); line-height: 1.8; margin-bottom: 20px; font-style: italic; font-weight: 300; }
   .tfoot { display: flex; align-items: center; gap: 11px; }
   .tav { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; background: var(--sky-20); color: var(--blue); border: 1px solid var(--border); }
   .tav2 { background: var(--grey-mid); color: var(--sub); border-color: transparent; }
+  .tav3 { background: rgba(0,104,229,0.15); color: var(--blue); }
   .tname { font-size: 0.875rem; font-weight: 600; }
   .trole { font-size: 0.75rem; color: var(--muted); }
 
@@ -203,9 +192,11 @@
   .cta-chip { display: inline-block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.22); padding: 5px 14px; border-radius: 100px; margin-bottom: 20px; }
   .cta-band h2 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 800; color: #fff; line-height: 1.13; letter-spacing: -0.025em; max-width: 620px; margin: 0 auto 16px; }
   .cta-band p { font-size: 1.05rem; color: rgba(255,255,255,0.72); max-width: 440px; margin: 0 auto 44px; line-height: 1.75; font-weight: 300; }
-  .btn-white { background: #fff; color: var(--blue); font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; padding: 15px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; display: inline-block; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.14); }
+  .btn-white { background: #fff; color: var(--blue); font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 700; padding: 15px 36px; border-radius: 100px; text-decoration: none; border: none; cursor: pointer; display: inline-block; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.14); margin: 0 6px; }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
-  .cta-note { margin-top: 16px; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+  .btn-white-outline { background: transparent; color: #fff; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; padding: 15px 32px; border-radius: 100px; text-decoration: none; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; display: inline-block; transition: all 0.2s; margin: 0 6px; }
+  .btn-white-outline:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+  .cta-note { margin-top: 18px; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
 
   footer { border-top: 1px solid var(--border); padding: 26px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--muted); background: var(--white); }
   .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text); font-size: 0.975rem; }
@@ -237,33 +228,35 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><div class="logo-box">M</div>MarketAI</a>
+  <a href="#" class="nav-logo"><div class="logo-box">CS</div>ContentStudio</a>
   <div class="nav-mid">
-    <a href="#">Features</a>
+    <a href="#">Product</a>
+    <a href="#">Solutions</a>
     <a href="#">Pricing</a>
-    <a href="#">Blog</a>
     <span class="nav-tag">For Solopreneurs</span>
   </div>
   <div class="nav-right">
     <a href="#" class="nav-link">Sign in</a>
-    <button class="nav-btn" onclick="openModal()">Book a Demo</button>
+    <a href="#" class="nav-btn" onclick="openModal();return false;">Book a Demo</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow"><span class="ew-icon">✦</span> AI Marketing — Built for Solo Operators</div>
-  <h1>You Run the Business.<br>Let <span class="hl">AI Handle</span> the Marketing.</h1>
-  <p class="hero-sub">MarketAI gives solopreneurs a complete marketing engine — automating content, leads, and campaigns so you can focus on what only you can do.</p>
+  <div class="hero-eyebrow">✦ AI-Powered Social Media Management</div>
+  <h1>You run the business.<br><span class="hl">Let AI handle</span> the marketing.</h1>
+  <p class="hero-sub">ContentStudio is your all-in-one AI-powered social media management platform to plan, create, schedule, and analyze content — to help you grow faster and stay consistent across every channel.</p>
   <div class="hero-actions">
-    <button class="btn-primary" onclick="openModal()">Book Your Free Demo →</button>
-    <a href="#features" class="btn-outline">See How It Works</a>
+    <button class="btn-primary" onclick="openModal()">Book your free demo →</button>
+    <a href="#" class="btn-outline">Start your free trial</a>
   </div>
-  <p class="hero-note">No credit card required · 30-minute session · Tailored to your business</p>
+  <p class="hero-note">
+    30-minute session <span class="sep">·</span> No credit card required <span class="sep">·</span> Cancel anytime
+  </p>
   <div class="social-proof">
     <div class="avs">
-      <div class="av av1">JK</div><div class="av av2">ML</div>
-      <div class="av av3">SR</div><div class="av av4">+</div>
+      <div class="av av1">TS</div><div class="av av2">ML</div>
+      <div class="av av3">DM</div><div class="av av4">+</div>
     </div>
     <span class="sp-text"><span class="st-gold">★★★★★</span>&nbsp; Trusted by <strong>2,400+ solopreneurs</strong> worldwide</span>
   </div>
@@ -272,12 +265,14 @@
 <!-- LOGOS -->
 <div class="logos-bar">
   <div class="logos-inner">
-    <span class="logos-lbl">Used by creators at</span>
-    <span class="logo-n">Indie Hackers</span>
-    <span class="logo-n">Product Hunt</span>
-    <span class="logo-n">Maven</span>
-    <span class="logo-n">Gumroad</span>
-    <span class="logo-n">Kajabi</span>
+    <span class="logos-lbl">Integrated with</span>
+    <span class="logo-n">Facebook</span>
+    <span class="logo-n">Instagram</span>
+    <span class="logo-n">LinkedIn</span>
+    <span class="logo-n">TikTok</span>
+    <span class="logo-n">YouTube</span>
+    <span class="logo-n">Pinterest</span>
+    <span class="logo-n">+ More</span>
   </div>
 </div>
 
@@ -286,9 +281,21 @@
   <div class="chip">The Problem</div>
   <h2 class="stitle">Marketing is a full-time job.<br>You're already doing three.</h2>
   <div class="pain-grid">
-    <div class="pcard"><div class="ico">⏳</div><h3>Time is your scarcest resource</h3><p>You're juggling client delivery, admin, and sales. Marketing falls to the bottom every time — and so do your leads.</p></div>
-    <div class="pcard"><div class="ico">📉</div><h3>Feast-or-famine client cycles</h3><p>When work gets busy, marketing stops. Then you're scrambling for new clients 60 days later. It's an exhausting loop.</p></div>
-    <div class="pcard"><div class="ico">💸</div><h3>Agency fees you can't justify</h3><p>Hiring a team isn't an option. Doing everything manually isn't sustainable. There used to be no middle ground.</p></div>
+    <div class="pcard">
+      <div class="ico">⏳</div>
+      <h3>Time is your scarcest resource</h3>
+      <p>You're juggling client delivery, admin, and sales. Marketing falls to the bottom every time.</p>
+    </div>
+    <div class="pcard">
+      <div class="ico">📉</div>
+      <h3>Inconsistent posting</h3>
+      <p>You post in bursts, then disappear. Without consistency, your reach drops, engagement stalls, and growth becomes unpredictable.</p>
+    </div>
+    <div class="pcard">
+      <div class="ico">💸</div>
+      <h3>Agency fees you can't justify</h3>
+      <p>Hiring a team isn't an option. Doing everything manually isn't sustainable. There used to be no middle ground.</p>
+    </div>
   </div>
 </section>
 
@@ -296,17 +303,34 @@
 <div class="sec-grey" id="features">
   <div class="sec" style="max-width:1100px">
     <div class="feat-top">
-      <div>
+      <div class="feat-top-text">
         <div class="chip">What You Get</div>
-        <h2 class="stitle" style="margin-bottom:0">Your AI marketing team,<br>minus the payroll.</h2>
+        <h2 class="stitle">Your AI marketing team,<br>minus the payroll.</h2>
+        <p class="feat-desc">ContentStudio helps you create, schedule, automate, and analyze your content — everything you need to manage social media, without the chaos.</p>
       </div>
-      <p>MarketAI handles strategy, content, distribution, and follow-up — running in the background while you focus on your clients and your craft.</p>
+      <div></div>
     </div>
     <div class="feat-grid">
-      <div class="fcard"><div class="ficon">✍️</div><h3>Content on Autopilot</h3><p>Generate weeks of on-brand social posts, email sequences, and blog content in minutes. Your voice, amplified by AI.</p><span class="ftag">Saves 12h/week</span></div>
-      <div class="fcard"><div class="ficon">🎯</div><h3>Lead Generation Engine</h3><p>Build targeted outreach campaigns that run 24/7 — even when you're with clients or asleep.</p><span class="ftag">3× more leads</span></div>
-      <div class="fcard"><div class="ficon">📊</div><h3>Smart Campaign Manager</h3><p>Plan, schedule, and track everything from a single dashboard. No more juggling five tools at once.</p><span class="ftag">One place, full control</span></div>
-      <div class="fcard"><div class="ficon">📈</div><h3>Performance Insights</h3><p>Know exactly what's driving inquiries — plain-English reports with clear, actionable next steps.</p><span class="ftag">Auto-reports</span></div>
+      <div class="fcard">
+        <div class="ficon">✍️</div>
+        <h3>Content on Autopilot</h3>
+        <p>Generate weeks of on-brand social posts; images, captions, and posts, in minutes. Your voice, amplified by AI.</p>
+      </div>
+      <div class="fcard">
+        <div class="ficon">📊</div>
+        <h3>Smart Campaign Manager</h3>
+        <p>Plan, schedule, and track everything from a single dashboard. No more juggling five tools at once.</p>
+      </div>
+      <div class="fcard">
+        <div class="ficon">📈</div>
+        <h3>Performance Insights</h3>
+        <p>Know exactly what's driving inquiries — plain-English reports with clear, actionable next steps.</p>
+      </div>
+      <div class="fcard">
+        <div class="ficon">💬</div>
+        <h3>Unified Social Inbox</h3>
+        <p>Manage comments, messages, and DMs from all your platforms in one place, so you never miss a conversation.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -315,7 +339,7 @@
 <div class="stats-row" style="margin:60px 60px;">
   <div class="si"><div class="snum">18h</div><div class="slbl">Saved per week, on average</div></div>
   <div class="si"><div class="snum">3.4×</div><div class="slbl">More qualified leads generated</div></div>
-  <div class="si"><div class="snum">94%</div><div class="slbl">Report a more consistent pipeline</div></div>
+  <div class="si"><div class="snum">94%</div><div class="slbl">Report more consistent posting</div></div>
   <div class="si"><div class="snum">14d</div><div class="slbl">Average time to first results</div></div>
 </div>
 
@@ -324,9 +348,30 @@
   <div class="sec" style="max-width:1100px">
     <h2 class="testi-h">Solopreneurs who stopped doing it all alone</h2>
     <div class="tgrid">
-      <div class="tcard"><div class="st">★★★★★</div><blockquote>"I went from posting sporadically to having a full content calendar running itself. My DMs have never been busier — and I haven't touched a scheduling tool in weeks."</blockquote><div class="tfoot"><div class="tav">JK</div><div><div class="tname">Jamie Kowalski</div><div class="trole">Brand Consultant · Chicago</div></div></div></div>
-      <div class="tcard"><div class="st">★★★★★</div><blockquote>"I was spending 10 hours a week on marketing and still losing leads. Now MarketAI handles prospecting while I do actual work. Revenue is up 40% this quarter."</blockquote><div class="tfoot"><div class="tav tav2">ML</div><div><div class="tname">Marcus Lin</div><div class="trole">UX Freelancer · Singapore</div></div></div></div>
-      <div class="tcard"><div class="st">★★★★★</div><blockquote>"The feast-or-famine cycle is gone. My pipeline stays full without me constantly hustling. It's like having a marketing partner without the agency bill."</blockquote><div class="tfoot"><div class="tav">SR</div><div><div class="tname">Sofia Ramos</div><div class="trole">Copywriter & Strategist · Madrid</div></div></div></div>
+      <div class="tcard">
+        <div class="st">★★★★★</div>
+        <blockquote>"ContentStudio is an easy-to-use platform; it adapts to my needs for my company, manages my social networks, and makes it easy for me to address my audience in a simple and empathetic way."</blockquote>
+        <div class="tfoot">
+          <div class="tav">TS</div>
+          <div><div class="tname">Thomas Smith</div><div class="trole">Digital Marketing Specialist</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="st">★★★★★</div>
+        <blockquote>"I was spending 10 hours a week on marketing and still losing leads. Now ContentStudio handles my social media while I do actual work. Revenue is up 40% this quarter."</blockquote>
+        <div class="tfoot">
+          <div class="tav tav2">ML</div>
+          <div><div class="tname">Marcus Lin</div><div class="trole">Marketing Freelancer</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="st">★★★★★</div>
+        <blockquote>"I'm a one-person team, so consistency was always a struggle. With ContentStudio, I can plan my content in advance and let it run. I don't miss posting anymore."</blockquote>
+        <div class="tfoot">
+          <div class="tav tav3">DM</div>
+          <div><div class="tname">Daniel Morris</div><div class="trole">Independent Content Creator</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -335,14 +380,17 @@
 <div class="cta-band">
   <div class="cta-chip">Get Started Today</div>
   <h2>Ready to stop being your own marketing department?</h2>
-  <p>Book a free 30-minute demo and see exactly how MarketAI would work for your specific business.</p>
-  <button class="btn-white" onclick="openModal()">Book Your Free Demo →</button>
-  <p class="cta-note">No commitment · No credit card · Just clarity</p>
+  <p>Book a free 30-minute demo and see exactly how ContentStudio would work for your specific business.</p>
+  <div>
+    <button class="btn-white" onclick="openModal()">Book your free demo</button>
+    <a href="#" class="btn-white-outline">Start your free trial</a>
+  </div>
+  <p class="cta-note">30-minute session · No credit card required · Cancel anytime</p>
 </div>
 
 <footer>
-  <div class="footer-logo"><div class="logo-box">M</div>MarketAI</div>
-  <div>© 2025 MarketAI, Inc. All rights reserved.</div>
+  <div class="footer-logo"><div class="logo-box">CS</div>ContentStudio</div>
+  <div>© 2025 ContentStudio, Inc. All rights reserved.</div>
   <div>Privacy · Terms · Contact</div>
 </footer>
 
@@ -353,7 +401,7 @@
     <div id="mForm">
       <div class="micon">🗓️</div>
       <h3>Book Your Free Demo</h3>
-      <p class="msub">We'll show you exactly how MarketAI works for solopreneurs like you — in 30 minutes flat.</p>
+      <p class="msub">We'll show you exactly how ContentStudio works for solopreneurs like you — in 30 minutes flat.</p>
       <input type="text" placeholder="Your full name" id="n1">
       <input type="email" placeholder="Work email" id="e1">
       <input type="text" placeholder="What type of work do you do?">
